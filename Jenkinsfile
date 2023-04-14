@@ -20,6 +20,7 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
+                sh 'docker --version'
                 sh 'gradle docker'
             }
         }
