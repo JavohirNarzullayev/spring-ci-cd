@@ -19,6 +19,11 @@ pipeline {
             }
         }
         stage('Build Docker Image') {
+            agent {
+                docker {
+                    reuseNode true
+                }
+            }
             steps {
                 sh 'docker --version'
                 sh 'gradle docker'
