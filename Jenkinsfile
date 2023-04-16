@@ -21,7 +21,8 @@ pipeline {
         stage('Realise') {
             steps {
                 sh 'gradle bootJar'
-                sh 'cd /build/libs/spring-ci-cd-0.0.1-SNAPSHOT.jar'
+                sh 'ls'
+                sh 'cd spring-ci-cd-0.0.1-SNAPSHOT.jar'
             }
         }
     }
