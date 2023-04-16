@@ -18,7 +18,13 @@ pipeline {
                 sh 'gradle test'
             }
         }
-        stage('Build Docker Image') {
+        stage('Test') {
+            steps {
+                sh 'gradle bootJar'
+                sh 'cd /build/libs/spring-ci-cd-0.0.1-SNAPSHOT.jar'
+            }
+        }
+       /* stage('Build Docker Image') {
             steps {
                 sh 'docker --version'
                 sh 'docker ps'
@@ -30,6 +36,6 @@ pipeline {
             steps {
                 sh 'gradle dockerRun'
             }
-        }
+        }*/
     }
 }
