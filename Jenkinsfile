@@ -21,6 +21,8 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh 'docker --version'
+                sh 'docker ps'
+                sh 'mkdir /certs/client/ca.pem -p'
                 sh 'gradle docker'
             }
         }
