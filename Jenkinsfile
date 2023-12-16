@@ -9,10 +9,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                withGradle(){
-                    sh './gradlew --version'
-                    sh './gradlew assemble'
-                }
+                sh 'gradle --version'
+                sh 'gradle assemble'
             }
         }
          stage('Test') {
