@@ -1,12 +1,14 @@
 pipeline {
     agent any
-
+    tools {
+        gradle "gradle 8.1"
+    }
     triggers {
         pollSCM '* * * * *'
     }
     stages {
         stage('info') {
-            steps{
+            steps {
                 echo 'version tools'
                 sh 'java -version'
                 sh 'gradle -v'
