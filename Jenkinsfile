@@ -7,13 +7,6 @@ pipeline {
         pollSCM '* * * * *'
     }
     stages {
-        stage('info') {
-            steps {
-                echo 'version tools'
-                sh 'java -version'
-                sh 'gradle -v'
-            }
-        }
         stage('Build') {
             steps {
                 sh 'gradle --version'
