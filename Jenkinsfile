@@ -8,9 +8,11 @@ pipeline {
     }
     stages {
         stage('info') {
-            echo 'version tools'
-            sh 'java -version'
-            sh 'gradle -v'
+            steps{
+                echo 'version tools'
+                sh 'java -version'
+                sh 'gradle -v'
+            }
         }
         stage('Build') {
             steps {
