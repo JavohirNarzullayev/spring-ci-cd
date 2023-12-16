@@ -11,7 +11,7 @@ pipeline {
             steps {
                 echo 'version tools'
                 sh 'java -version'
-                sh 'gradle --version'
+                sh 'gradle -v'
             }
         }
         stage('Build') {
