@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('info') {
             steps {
-                echo 'version tools new'
+                echo 'version tools'
                 sh 'java -version'
                 sh 'gradle -v'
             }
