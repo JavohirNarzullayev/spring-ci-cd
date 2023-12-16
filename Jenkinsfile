@@ -2,7 +2,6 @@ pipeline {
     agent any
     tools {
         gradle "8.1"
-        docker "docker"
     }
     triggers {
         pollSCM '* * * * *'
