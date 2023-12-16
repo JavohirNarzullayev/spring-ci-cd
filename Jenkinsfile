@@ -13,7 +13,7 @@ pipeline {
                 sh 'gradle assemble'
             }
         }
-         stage('Test') {
+        stage('Test') {
             steps {
                 sh 'gradle test'
             }
@@ -21,7 +21,7 @@ pipeline {
         stage('Realise') {
             steps {
                 sh 'gradle bootJar'
-                sh 'nohup java -jar build/libs/spring-ci-cd-0.0.1-SNAPSHOT.jar &'
+                sh 'java -jar build/libs/spring-ci-cd-0.0.1-SNAPSHOT.jar &'
             }
         }
     }
