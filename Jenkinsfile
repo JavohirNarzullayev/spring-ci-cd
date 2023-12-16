@@ -9,6 +9,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'docker -v'
                 sh 'gradle --version'
                 sh 'gradle assemble'
             }
@@ -19,6 +20,9 @@ pipeline {
             }
         }
         stage('Realise') {
+            when {
+                branch 'dev'
+            }
             steps {
                 sh 'gradle bootJar'
                 sh 'java -jar build/libs/spring-ci-cd-0.0.1-SNAPSHOT.jar &'
