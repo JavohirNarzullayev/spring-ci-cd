@@ -8,7 +8,7 @@ pipeline {
     }
     stages {
         stage('info') {
-            ech 'version tools'
+            echo 'version tools'
             sh 'java -version'
             sh 'gradle -v'
         }
